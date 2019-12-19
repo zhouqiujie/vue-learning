@@ -1,5 +1,5 @@
 <template>
-  <el-header>
+  <el-header class="shadow-sm">
     <div class="flex-center">
       <a href="/">
         <img src="@/assets/logo.png" width="50" alt />
@@ -7,7 +7,12 @@
     </div>
     <div>
       <!-- :default-active="activeIndex2" -->
-      <el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect" router>
+      <el-menu
+        class="el-menu-demo"
+        mode="horizontal"
+        @select="handleSelect"
+        router
+      >
         <el-menu-item index="/home">Home</el-menu-item>
         <el-submenu index="2">
           <template slot="title">我的工作台</template>
@@ -34,20 +39,20 @@
 
 <script>
 export default {
-  name: "Header",
+  name: 'Header',
   data: () => {
     return {
-      activeIndex2: "",
+      activeIndex2: '',
       circleUrl:
-        "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
-    };
+        'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
+    }
   },
   methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+    handleSelect (key, keyPath) {
+      console.log(key, keyPath)
     }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">

@@ -4,7 +4,15 @@
     <el-container class="container-main">
       <Aside />
       <el-main>
-        <router-link to="/about/page1">page1</router-link>
+        <div class="container">
+          <h5>This is About</h5>
+          <div class="row">
+            <div class="col">
+              <router-link to="/about/page1">page1</router-link>
+            </div>
+          </div>
+        </div>
+
         <router-view />
       </el-main>
     </el-container>
@@ -12,16 +20,16 @@
 </template>
 
 <script>
-import Header from "../layout/header";
-import Aside from "../layout/aside.vue";
+import Header from '../layout/header'
+import Aside from '../layout/aside.vue'
 
 export default {
-  name: "",
+  name: '',
   components: {
     Header,
     Aside
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
