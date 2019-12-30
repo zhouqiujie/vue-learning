@@ -2,7 +2,6 @@
   <el-aside width="200px">
     <div>
       <el-menu
-        :default-active="activeIndex2"
         class="el-menu-demo"
         mode="vertical"
         @select="handleSelect"
@@ -36,7 +35,6 @@ export default {
   name: 'Aside',
   data: () => {
     return {
-      activeIndex2: '1',
       circleUrl:
         'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
     }

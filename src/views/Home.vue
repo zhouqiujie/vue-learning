@@ -33,6 +33,9 @@ export default {
   name: 'home',
   components: {
     Header
+  },
+  methods: {},
+  created: function() {
   }
 }
 </script>
