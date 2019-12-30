@@ -30,9 +30,15 @@
         <el-menu-item index="/about">About</el-menu-item>
       </el-menu>
     </div>
-    <div class="flex-center">
-      <el-avatar :size="40" :src="circleUrl"></el-avatar>
-      <span class="px-2">Mike</span>
+    <div class="">
+      <div class="h-100 d-flex justify-content-end align-items-center" v-if="$adal.isAuthenticated()">
+        <el-avatar :size="40" :src="circleUrl"></el-avatar>
+        <span class="px-2">{{ $adal.user.profile.name }}</span>
+        <el-button type="info" v-on:click="$adal.logout()">Logout</el-button>
+      </div>
+      <div class="h-100 d-flex justify-content-end align-items-center" v-if="!$adal.isAuthenticated()">
+        <el-button type="primary" v-on:click="$adal.login()">Login</el-button>
+      </div>
     </div>
   </el-header>
 </template>
@@ -48,7 +54,7 @@ export default {
     }
   },
   methods: {
-    handleSelect (key, keyPath) {
+    handleSelect(key, keyPath) {
       console.log(key, keyPath)
     }
   }
@@ -60,13 +66,13 @@ export default {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  div:nth-child(1) {
+  > div:nth-child(1) {
     width: 120px;
   }
-  div:nth-child(2) {
+  > div:nth-child(2) {
     flex: 1 1 auto;
   }
-  div:nth-child(3) {
+  > div:nth-child(3) {
     width: 300px;
   }
 }

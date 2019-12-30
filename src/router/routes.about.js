@@ -8,6 +8,9 @@ export default [
     component: About,
     children: [
       { path: 'page1', component: Page1 }
-    ]
+    ],
+    meta: {
+      requireAuth2: true
+    }
   }
 ]
