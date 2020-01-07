@@ -28,7 +28,8 @@
 <script>
 import Header from '../layout/header'
 import Aside from '../layout/aside.vue'
-import { getInfo } from '../axios/home.api'
+// import { getInfo } from '../axios/home.api'
+import store from '../store/index'
 
 export default {
   name: '',
@@ -38,17 +39,27 @@ export default {
   },
   data: () => {
     return {
-      list: [],
+      list2: [],
       name: ''
     }
   },
   created: function() {
-    getInfo(this.$adal.user.userName).then(res => {
+    /* getInfo(this.$adal.user.userName).then(res => {
       console.log(res)
       // this.data.list = res
       this.name = 'ok'
       this.list.splice(0, this.list.length, ...res)
+    }) */
+    store.dispatch({
+      type: 'listFetching',
+      user: this.$adal.user.userName
     })
+  },
+  computed: {
+    list() {
+      // console.log(store.state)
+      return store.state.b.list
+    }
   }
 }
 </script>

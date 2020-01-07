@@ -1,6 +1,6 @@
 import API from './api'
 
-const baseUrl = 'http://cefdevcluster.chinaeast2.cloudapp.chinacloudapi.cn:81/'
+const baseUrl = '***'
 
 export const getInfo = upn => {
   return API.get(`${baseUrl}/Roles/Assignments/Upns/${upn}`, {

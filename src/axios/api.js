@@ -6,7 +6,7 @@ const http = axios.create()
 http.interceptors.request.use(
   config => {
     let idToken = ''
-    AuthenticationContext.acquireToken('9e2dd572-02a2-4895-9447-05115f3d972f', (err, token) => {
+    AuthenticationContext.acquireToken('***', (err, token) => {
       console.log(err)
       idToken = token
     })
