@@ -7,6 +7,10 @@
         <div class="container">
           <h5>This is About</h5>
           <div class="row">
+            <div class="col">{{api}}</div>
+            <!-- <div class="col">{{process.env.VUE_APP_API_URL}}</div> -->
+          </div>
+          <div class="row">
             <div class="col">
               <router-link to="/about/page1">page1</router-link>
             </div>
@@ -14,7 +18,7 @@
           <div>name:{{ name }}</div>
           <div>
             <span v-for="(item, index) in list" v-bind:key="index">
-              {{ index + item.scopeId }},
+              {{ index + ',' }},
             </span>
           </div>
         </div>
@@ -40,7 +44,8 @@ export default {
   data: () => {
     return {
       list2: [],
-      name: ''
+      name: '',
+      api: process.env.VUE_APP_API_URL
     }
   },
   created: function() {
@@ -54,6 +59,7 @@ export default {
       type: 'listFetching',
       user: this.$adal.user.userName
     })
+    console.log(this)
   },
   computed: {
     list() {
